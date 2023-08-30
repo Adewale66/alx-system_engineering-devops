@@ -14,3 +14,4 @@
 14. 13-symbolic-link - creates a symbolic link
 15. 14-copy-html - moves all html files to parent dir
 16. 100-lets-move - moves all uppercased files
+17. 101-clean_emacs - removes files that end with ~
