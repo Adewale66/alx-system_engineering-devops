@@ -12,3 +12,4 @@
 12. 11-lists - lists content in cwd prev dir and /boot dir
 13. 12-file_type - shows the type of file
 14. 13-symbolic-link - creates a symbolic link
+15. 14-copy-html - moves all html files to parent dir
