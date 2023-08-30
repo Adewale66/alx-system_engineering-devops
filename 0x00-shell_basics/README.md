@@ -1,1 +1,2 @@
-# 0-current_working_directory - shows path of current working directory
+1. 0-current working directory - shows path of current working directory
+2. 1-listit - shows the contents of working directory
