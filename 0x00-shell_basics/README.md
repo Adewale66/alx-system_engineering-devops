@@ -9,3 +9,4 @@
 9. 8-firstdelete - removes betty file from tmp/my_first_directory
 10. 9-firstdirdeletion - removes my-first-directory from /tmp
 11. 10-back- Goes back to previous dir
+12. 11-lists - lists content in cwd prev dir and /boot dir
