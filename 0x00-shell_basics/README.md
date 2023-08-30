@@ -1,3 +1,5 @@
-1. 0-current working directory - shows path of current working directory
+1. 0-current-working-directory - shows path of current working directory
 2. 1-listit - shows the contents of working directory
-3. 2-bring_me_home - brings user to home directory
+3. 2-bring-me-home - brings user to home directory
+4. 3-listfiles - shows all files in directory in long format
+5. 4-listmorefiles - shows all files and hidden in directory in long format
