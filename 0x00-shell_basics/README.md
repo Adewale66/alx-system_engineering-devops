@@ -10,3 +10,4 @@
 10. 9-firstdirdeletion - removes my-first-directory from /tmp
 11. 10-back- Goes back to previous dir
 12. 11-lists - lists content in cwd prev dir and /boot dir
+13. 12-file_type - shows the type of file
