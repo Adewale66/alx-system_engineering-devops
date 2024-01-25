@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory
+
+files=$(ls)
+for item in $files
+do
+	temp=$(cut -d'-' -f2 <<< "$item")
+	echo "$temp"
+done
