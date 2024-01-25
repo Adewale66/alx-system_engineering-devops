@@ -4,5 +4,5 @@
 file="apache-access.log"
 
 # Display the top 10 IPs and their request count sorted by request count in descending order
-awk '{ print $1, $9}' $file | sort | uniq -c | sort -rn
+awk '{print $1, $9}' $file | sort | uniq -c | sort -rn
 
