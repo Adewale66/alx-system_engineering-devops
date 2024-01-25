@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays the visitor IP along with the HTTP status code from the Apache log file
+
+file="apache-access.log"
+
+# Display the top 10 IPs and their request count sorted by request count in descending order
+awk '{print $1, $9}' $file 
+
