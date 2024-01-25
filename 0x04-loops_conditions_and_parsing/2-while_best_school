@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # This script is used to print Best school using while loop 10 times
 
 count=1
