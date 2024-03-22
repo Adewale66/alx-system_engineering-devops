@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# This script is used to prevent password prompt when connecting to server using ssh
+
+Host alx
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
