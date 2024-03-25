@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# fixes server error
+
+service apache2 status
+service apache2 start
