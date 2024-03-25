@@ -9,8 +9,10 @@ echo 'Hello World!' > /var/www/html/index.html
 echo "http {
 	server {
 		listen 80;
+		
+		root /var/www/html;
+		
 		location / {
-			root /var/www/html;
 			index.html;
 		}
 	}
@@ -18,4 +20,8 @@ echo "http {
 
 events { }
 " > /etc/nginx/nginx.conf
-service nginx start
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+	service nginx start
+else
+	service nginx restart
+fi
