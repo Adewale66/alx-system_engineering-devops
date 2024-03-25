@@ -11,4 +11,4 @@ if [ -z "$path_to_file" ] || [ -z "$ip" ] || [ -z "$username" ] || [ -z "$path_t
 	exit 1
 fi
 
-scp -i "$path_to_ssh_key" "$path_to_file" "$username@$ip:~/" 
+scp -i "$path_to_ssh_key" "$path_to_file" "$username@$ip:"~/
