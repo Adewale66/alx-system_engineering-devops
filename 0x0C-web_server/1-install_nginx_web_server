@@ -20,4 +20,4 @@ echo "http {
 
 events { }
 " > /etc/nginx/nginx.conf
-service nginx restart
+service nginx start
