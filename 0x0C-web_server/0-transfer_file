@@ -7,7 +7,7 @@ username=$3
 path_to_ssh_key=$4
 
 if [ -z "$path_to_file" ] || [ -z "$ip" ] || [ -z "$username" ] || [ -z "$path_to_ssh_key" ]; then
-	echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 	exit 1
 fi
 
