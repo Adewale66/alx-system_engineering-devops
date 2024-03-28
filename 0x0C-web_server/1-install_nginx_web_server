@@ -9,12 +9,7 @@ echo 'Hello World!' > /tmp/index.html
 echo "http {
 	server {
 		listen 80;
-		
 		root /tmp;
-		
-		location / {
-			
-		}
 	}
 }
 
