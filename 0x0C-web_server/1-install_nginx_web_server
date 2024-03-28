@@ -11,6 +11,7 @@ echo "http {
 		listen 80;
 
 		root /tmp;
+		index index.html;
 	}
 }
 
