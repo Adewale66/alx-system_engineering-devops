@@ -10,8 +10,9 @@ echo "http {
 	server {
 		listen 80;
 
-		root /tmp;
-		index index.html;
+		location / {
+			root /tmp;
+		}	
 	}
 }
 
