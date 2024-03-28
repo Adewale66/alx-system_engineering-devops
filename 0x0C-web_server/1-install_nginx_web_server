@@ -9,10 +9,11 @@ echo 'Hello World!' > /tmp/index.html
 echo "http {
 	server {
 		listen 80;
+
 		root /tmp;
 	}
 }
 
 events { }
-" > /etc/nginx/sites-enabled/default
-service nginx start
+" > /etc/nginx/nginx.conf
+nginx -s reload
