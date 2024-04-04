@@ -1,1 +1,8 @@
 #!/usr/bin/env bash
+#!/usr/bin/env bash
+# Script that fixes bad server
+
+apt -y update
+apt -y install nginx
+ufw allow 'Nginx HTTP'
+service nginx restart
