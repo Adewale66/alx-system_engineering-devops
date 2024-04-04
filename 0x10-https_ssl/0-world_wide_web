@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Displays information about subdomains
+
+
+func() {
+	subdomain=$(awk -F '.' '{print $1}' <<< "$1")
+	dig "$1" | grep -A1 'ANSWER SECTION:' | tr -d \; | sed '/ ANSWER SECTION:/d' | awk -v d="$subdomain" '{print "The subdomain:",d,"is a",$4, "record", "AND points to", $5}'
+
+	return 0
+}
+
+if [ -z "$2" ]
+then
+	subdomains=(www lb-01 web-01 web-02)
+
+	for subdomain in "${subdomains[@]}"; do
+		func "${subdomain}.${1}"
+	done
+else
+	func "${2}.${1}"
+fi
