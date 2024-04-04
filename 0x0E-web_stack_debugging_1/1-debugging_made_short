@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # Script that fixes bad server
-
-apt -y update
-apt -y install nginx
-ufw allow 'Nginx HTTP'
-service nginx stop
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx start
+kill "$(pgrep 'nginx' | head -1)"

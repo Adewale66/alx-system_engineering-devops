@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Script that fixes bad server
 
-apt -y update
-apt -y install nginx
-ufw allow 'Nginx HTTP'
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
