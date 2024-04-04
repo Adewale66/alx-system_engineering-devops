@@ -4,7 +4,7 @@
 
 func() {
 	subdomain=$(awk -F '.' '{print $1}' <<< "$1")
-	dig "$1" | grep -A1 'ANSWER SECTION:' | tr -d \; | sed '/ ANSWER SECTION:/d' | awk -v d="$subdomain" '{print "The subdomain:",d,"is a",$4, "record", "AND points to", $5}'
+	dig "$1" | grep -A1 'ANSWER SECTION:' | tr -d \; | sed '/ ANSWER SECTION:/d' | awk -v d="$subdomain" '{print "The subdomain",d,"is a",$4, "record", "AND points to", $5}'
 
 	return 0
 }
