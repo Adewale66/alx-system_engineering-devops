@@ -4,4 +4,4 @@
 apt -y update
 apt -y install nginx
 ufw allow 'Nginx HTTP'
-service nginx restart
+service nginx stop
