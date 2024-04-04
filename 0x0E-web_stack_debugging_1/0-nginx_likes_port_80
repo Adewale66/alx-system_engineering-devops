@@ -1,18 +1,7 @@
 #!/usr/bin/env bash
 # Script that fixes bad server
 
+apt -y update
+apt -y install nginx
 ufw allow 'Nginx HTTP'
-echo "
-	server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
-
-	server_name _;
-
-	location / {
-		try_files $uri $uri/ =404;
-	}
-}" > /etc/nginx/sites-enabled/default
 service nginx restart
