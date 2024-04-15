@@ -1,0 +1,14 @@
+ufw allow 8080/tcp
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 1723 -j REDIRECT --to-port 81
+COMMIT
+sed -i 's/DEFAULT_FOWARD_POLICY=\"DROP\"/DEFAULT_FOWARD_POLICY=\"ACCEPT\"/s /etc/default/ufw
+echo "net/ipv4/ip_foward=1" >> /etc/ufw/sysctl.conf
+nano /etc/ufw/before.rules
+	*nat
+	:PREROUTING ACCEPT [0:0]
+	-A PREROUTING -p tcp --dport 1723 -j REDIRECT --to-port 81
+	COMMIT
+ufw disable
+ufw enable
