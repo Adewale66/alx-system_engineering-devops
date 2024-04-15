@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-sudo apt update -y
-sudo apt install nginx -y
-sudo useradd -m -s /bin/bash nginx
+# Run Nginx as Nginx
 sed -i 's/user www-data/user nginx/' /etc/nginx/nginx.conf
-service restart nginx
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+chmod 644 /etc/nginx/nginx.conf
+sudo -u nginx service restart nginx
