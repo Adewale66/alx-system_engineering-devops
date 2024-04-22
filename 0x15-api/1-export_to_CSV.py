@@ -4,20 +4,20 @@
 Export to CSV
 """
 
+import csv
 import requests
 from sys import argv
 
 
-if __name__ == '__main__':
-    num = argv[1]
-    url = "https://jsonplaceholder.typicode.com"
-    data = requests.get(f"{url}/users/{num}")
-    response = data.json()
-    if response:
-        n = response['name']
-        id = response['id']
-        tasks = requests.get(f"{url}/todos?userid={id}").json()
-        completed = [x for x in tasks if x['completed']]
-        with open(f"{num}.csv", 'w') as f:
-            for t in tasks:
-                f.write(f'"{id}", "{n}", "{t["completed"]}","{t["title"]}"\n')
+if __name__ == "__main__":
+    user_id = argv[1]
+    url = "https://jsonplaceholder.typicode.com/"
+    user = requests.get(url + "users/{}".format(user_id)).json()
+    username = user.get("username")
+    todos = requests.get(url + "todos", params={"userId": user_id}).json()
+
+    with open("{}.csv".format(user_id), "w", newline="") as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        [writer.writerow(
+            [user_id, username, t.get("completed"), t.get("title")]
+         ) for t in todos]

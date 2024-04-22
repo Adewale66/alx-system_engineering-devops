@@ -8,16 +8,13 @@ import requests
 from sys import argv
 
 
-if __name__ == '__main__':
-    num = argv[1]
-    url = "https://jsonplaceholder.typicode.com"
-    data = requests.get(f"{url}/users/{num}")
-    response = data.json()
-    if response:
-        name = response['name']
-        id = response['id']
-        tasks = requests.get(f"{url}/todos?userid={id}").json()
-        com = [x for x in tasks if x['completed']]
-        print(f"Employee {name} is done with tasks({len(com)}/{len(tasks)}):")
-        for task in com:
-            print("\t {}".format(task['title']))
+
+if __name__ == "__main__":
+    url = "https://jsonplaceholder.typicode.com/"
+    user = requests.get(url + "users/{}".format(argv[1])).json()
+    todos = requests.get(url + "todos", params={"userId": argv[1]}).json()
+
+    completed = [t.get("title") for t in todos if t.get("completed") is True]
+    print("Employee {} is done with tasks({}/{}):".format(
+        user.get("name"), len(completed), len(todos)))
+    [print("\t {}".format(c)) for c in completed]
