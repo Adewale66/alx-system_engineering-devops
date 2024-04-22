@@ -4,8 +4,8 @@
 Dictionary of list of dictionaries
 """
 
-import requests
 import json
+import requests
 
 
 if __name__ == '__main__':

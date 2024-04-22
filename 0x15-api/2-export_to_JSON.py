@@ -4,9 +4,9 @@
 Gather data JSON
 """
 
+import json
 import requests
 from sys import argv
-import json
 
 
 if __name__ == '__main__':
@@ -18,7 +18,6 @@ if __name__ == '__main__':
         name = response['name']
         id = response['id']
         tasks = requests.get(f"{url}/todos?userid={id}").json()
-        completed = [x for x in tasks if x['completed']]
         with open(f"{num}.json", 'w') as f:
             json.dump({num: [{
                 "task": task['title'],

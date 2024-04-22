@@ -17,8 +17,7 @@ if __name__ == '__main__':
         name = response['name']
         id = response['id']
         tasks = requests.get(f"{url}/todos?userid={id}").json()
-        completed = [x for x in tasks if x['completed']]
-        print(f"Employee {name} is done with tasks(\
-            {len(completed)}/{len(tasks)}):")
-        for task in completed:
+        com = [x for x in tasks if x['completed']]
+        print(f"Employee {name} is done with tasks({len(com)}/{len(tasks)}):")
+        for task in com:
             print("\t {}".format(task['title']))
